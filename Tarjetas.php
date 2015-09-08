@@ -65,23 +65,45 @@ class tarjetaMedioBoleto{
   public function pagarBoleto($colectivo,$horario){
     if($this->n>0){/*si ya existe un viaje anterior*/
       if (($horario-3600)<=$this->viajes[$this->n-1]->horario && $this->viajes[$this->n-1]->colectivo->empresa == $colectivo->empresa && $this->viajes[$this->n-1]->colectivo->num != $colectivo->num){
-        if ($this->saldo >= 0.96){
-          $this->saldo = $this->saldo - 0.96;
-          $this->viajes[$this->n] = new viaje($colectivo,0.96,$horario);
-          $this->n++;
-          return True;
+        if(date("H",$horario)>=6){
+          if ($this->saldo >= 0.96){
+            $this->saldo = $this->saldo - 0.96;
+            $this->viajes[$this->n] = new viaje($colectivo,0.96,$horario);
+            $this->n++;
+            return True;
+          }else{
+            return False;
+          }
         }else{
-          return False;
+          if ($this->saldo >= 1.90){
+            $this->saldo = $this->saldo - 1.90;
+            $this->viajes[$this->n] = new viaje($colectivo,1.90,$horario);
+            $this->n++;
+            return True;
+          }else{
+            return False;
+          }
         }
       }
     }/*si no existe viaje anterior, no nos fijamos en el trasbordo*/
-    if ($this->saldo >= 2.9){
-      $this->saldo = $this->saldo - 2.9;
-      $this->viajes[$this->n] = new viaje($colectivo,2.9,$horario);
-      $this->n++;
-      return True;
+    if(date("H",$horario)>=6){
+      if ($this->saldo >= 2.9){
+        $this->saldo = $this->saldo - 2.9;
+        $this->viajes[$this->n] = new viaje($colectivo,2.9,$horario);
+        $this->n++;
+        return True;
+      }else{
+        return False;
+      }
     }else{
-      return False;
+      if ($this->saldo >= 5.75){
+        $this->saldo = $this->saldo - 5.75;
+        $this->viajes[$this->n] = new viaje($colectivo,5.75,$horario);
+        $this->n++;
+        return True;
+      }else{
+        return False;
+      }
     }
   }
   public function recarga($monto){
@@ -152,4 +174,3 @@ $tarjmed->saldo();
 $tarjmed->viajesRealizados();
 /*date("H",$horario)>=6*/
 ?>
-
