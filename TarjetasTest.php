@@ -1,6 +1,7 @@
 <?php
 
   class TarjetasTest extends PHPUnit_Framework_TestCase {
+<<<<<<< HEAD
 
     public function testrecarga()
     {
@@ -43,6 +44,20 @@
       $tarjmed = new tarjetaMedioBoleto;
       $tarjmed->recarga(196);
       $this->assertEquals(230,$tarjmed->saldo());
+=======
+    public function testpagarboleto()
+    {
+      $bondi1 = new tarjetaComun("Semtur","K",11);
+      $this->assertEquals("Semtur","K",11, $bondi->);
+    }
+    public function testrecarga()
+    {
+
+    }
+    public function testsaldo()
+    {
+
+>>>>>>> f4b3e8de94d68ec3873dad10257fe34691893f58
     }
   }
  ?>
