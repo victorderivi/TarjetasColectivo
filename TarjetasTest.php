@@ -20,7 +20,7 @@ include 'Tarjetas.php';
     {
       $tarj = new tarjetaComun;
       $tarj->recarga(196);
-      $this->assertEquals(230,$tarj->saldo());
+      $this->assertEquals(220,$tarj->saldo());
     }
   }
  ?>
