@@ -10,7 +10,7 @@ class tarjetaComun{
 	}
   public function pagarBoleto($colectivo,$horario){
     if($this->n>0){/*si ya existe un viaje anterior*/
-      if (($horario-3600)<=$this->viajes[$this->n-1]->horario && $this->viajes[$this->n-1]->colectivo->empresa == $colectivo->empresa && $this->viajes[$this->n-1]->colectivo->num != $colectivo->num{
+      if (($horario-3600)<=$this->viajes[$this->n-1]->horario && $this->viajes[$this->n-1]->colectivo->empresa == $colectivo->empresa && $this->viajes[$this->n-1]->colectivo->num != $colectivo->num){
         if ($this->saldo >= 1.90){
           $this->saldo = $this->saldo - 1.90;
           $this->viajes[$this->n] = new viaje($colectivo,1.90,$horario);
@@ -152,3 +152,4 @@ $tarjmed->saldo();
 $tarjmed->viajesRealizados();
 /*date("H",$horario)>=6*/
 ?>
+
