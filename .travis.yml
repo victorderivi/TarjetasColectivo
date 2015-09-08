@@ -16,4 +16,4 @@ matrix:
   fast_finish: true
 
 script:
-  Tarjetas.php
+  TarjetasTest.php
