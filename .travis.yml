@@ -16,4 +16,4 @@ matrix:
 
   fast_finish: true
 
-script: phpunit
+script: phpunit TarjetasTest.php
