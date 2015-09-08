@@ -10,7 +10,7 @@ class tarjetaComun{
 	}
   public function pagarBoleto($colectivo,$horario){
     if($this->n>0){/*si ya existe un viaje anterior*/
-      if (($horario-3600)<=$this->viajes[$this->n-1]->horario && $this->viajes[$this->n-1]->colectivo->empresa == $colectivo->empresa && $this->viajes[$this->n-1]->colectivo->num != $colectivo->num){
+      if (($horario-3600)<=$this->viajes[$this->n-1]->horario && $this->viajes[$this->n-1]->colectivo->empresa == $colectivo->empresa && $this->viajes[$this->n-1]->colectivo->num != $colectivo->num{
         if ($this->saldo >= 1.90){
           $this->saldo = $this->saldo - 1.90;
           $this->viajes[$this->n] = new viaje($colectivo,1.90,$horario);
@@ -46,6 +46,7 @@ class tarjetaComun{
   }
   public function saldo(){
     echo "Su saldo es de: $".$this->saldo."<br/>";
+    return $this->saldo;
   }
   public function viajesRealizados(){
     foreach($this->viajes as &$a){
@@ -99,6 +100,7 @@ class tarjetaMedioBoleto{
   }
   public function saldo(){
     echo "Su saldo es de: $".$this->saldo."<br/>";
+    return $this->saldo;
   }
   public function viajesRealizados(){
     foreach($this->viajes as &$a){
@@ -148,4 +150,5 @@ $tarjmed->pagarBoleto($bondi1,1441300001);/*boleto normal, paga 2 boletos en el 
 $tarjmed->pagarBoleto($bondi2,1441300002);/*trasbordo, 44.2-0.96=43.24*/
 $tarjmed->saldo();
 $tarjmed->viajesRealizados();
+/*date("H",$horario)>=6*/
 ?>
