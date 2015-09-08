@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/victorderivi/TarjetasColectivo.svg?branch=master.png)](https://travis-ci.org/victorderivi/TarjetasColectivo.svg?branch=master)
+[![Build Status](https://travis-ci.org/victorderivi/TarjetasColectivo.svg?branch=master)](https://travis-ci.org/victorderivi/TarjetasColectivo)
