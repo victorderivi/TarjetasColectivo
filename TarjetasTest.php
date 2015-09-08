@@ -14,7 +14,7 @@
       $bondi1 = new colectivo("Semtur","K",11);
       $tarj = new tarjetaComun;
       $tarj->recarga(196);
-      $this->assertEquals(5.75,$tarj->pagarBoleto($bondi1,1441300000));
+      $this->assertEquals(5.80,$tarj->pagarBoleto($bondi1,1441300000));
     }
 
     public function testsaldo()
